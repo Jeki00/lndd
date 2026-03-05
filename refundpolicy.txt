@@ -1,0 +1,35 @@
+Refund Policy
+Last Updated: 2026-02-24
+Thank you for shopping and utilizing the services at Softactut. This Refund Policy is formulated in accordance with the Terms and Conditions of our payment gateway provider (PT Nusa Satu Inti Artha / DOKU). By completing a transaction at Softactut, you consciously understand and agree to the refund terms outlined below.
+1. Policy Based on Product/Service Category
+A. Digital Products - One-time Download (DevOps Cheatsheet)
+Due to the irrevocable nature of digital products that can be instantly downloaded and copied, the sale of the DevOps Cheatsheet is FINAL. We DO NOT OFFER REFUNDS (Non-Refundable) once the transaction is successful and the download link has been sent to or accessed by you.
+B. Digital Products - Course Access (DevOps from Zero)
+Access to the DevOps from Zero masterclass is FINAL. We do not issue refunds if our system records that you have logged in, accessed, watched, or downloaded any material within the course platform.
+C. Freelance Development Services (Build My Project)
+Freelance services will be executed based on the mutually agreed scope of work. Cancellation and refund terms are as follows:
+Before Work Begins: If you cancel the project before the research or coding phase begins, you are entitled to a 100% refund.
+Work in Progress: If the cancellation occurs while the project is currently being developed, a refund will only be issued on a prorated basis, deducting the percentage of work/milestones already completed by Softactut.
+Project Completed: There are NO REFUNDS for projects that have been completed and deployed/delivered. Any discrepancies in the outcome will be resolved strictly through the revision process agreed upon in the initial project contract.
+2. Refund Exceptions (Special Conditions)
+We may approve a refund request for Digital Products only if it meets one of the following conditions:
+Duplicate Purchase: You accidentally purchased the exact same product more than once simultaneously.
+Major Technical Issues: A critical error in our system prevents you from downloading the file or accessing the class entirely, and our support team is unable to resolve the issue within 3x24 hours after your report.
+3. Procedure for Requesting a Refund
+If your request meets the eligible criteria above, please submit a refund request by contacting us at [Your Email Address].
+As mandated by our payment gateway regulations (DOKU), you MUST include the following information in your request email:
+Full Name
+Email Address used during the transaction
+Phone Number
+Transaction ID / Invoice Number
+Detailed reason for the refund request
+Receiving Bank Details (Bank Name, Account Holder Name, Account Number) OR the respective DOKU Wallet / e-Wallet ID.
+4. Refund Processing Time (SLA)
+If the refund request is approved by Softactut, we will instruct DOKU to process the fund transfer. The estimated time to receive your funds (based on DOKU's Service Level Agreement) is:
+Credit Card: Refunded directly to the original Credit Card limit (processing time depends on the issuing bank, generally taking 7-14 Business Days).
+Bank Transfer: Maximum of 10 (ten) Business Days. Please note the maximum refund limit via bank transfer is IDR 25,000,000 per transaction.
+DOKU Wallet / e-Wallet: Maximum of 3 (three) Business Days.
+Note: Refunds strictly cover the Product/Service price. Third-party payment gateway or admin fees (if applicable) may not be refunded.
+5. Fraud Prevention (Chargeback Mitigation)
+Every transaction made on Softactut logs the buyer's IP Address, timestamps, and server access logs (serving as definitive proof that a file was downloaded or a course was accessed).
+If a customer files a Dispute (Chargeback) with their card-issuing bank claiming "item not received" or "unrecognized transaction" while our system logs prove that the file was successfully downloaded or the service was rendered, Softactut will submit these access logs along with this Refund Policy directly to DOKU and the Acquirer Bank to contest and deny the Chargeback. Filing fraudulent Chargebacks will result in a permanent ban from all our services.

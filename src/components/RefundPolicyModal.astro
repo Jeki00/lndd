@@ -1,0 +1,221 @@
+---
+---
+
+<div id="refund-modal" class="modal-backdrop hidden">
+  <div class="modal-content glass-panel animate-fade-up delay-100">
+    <div class="modal-header">
+      <h2 class="text-gradient">Refund Policy</h2>
+      <button id="close-modal" class="btn-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="text-sm">Last Updated: 2026-02-24</p>
+      <p>Thank you for shopping and utilizing the services at Softactut. This Refund Policy is formulated in accordance with the Terms and Conditions of our payment gateway provider (PT Nusa Satu Inti Artha / DOKU). By completing a transaction at Softactut, you consciously understand and agree to the refund terms outlined below.</p>
+      
+      <h3>1. Policy Based on Product/Service Category</h3>
+      <h4>A. Digital Products - One-time Download (DevOps Cheatsheet)</h4>
+      <p>Due to the irrevocable nature of digital products that can be instantly downloaded and copied, the sale of the DevOps Cheatsheet is <strong>FINAL</strong>. We DO NOT OFFER REFUNDS (Non-Refundable) once the transaction is successful and the download link has been sent to or accessed by you.</p>
+
+      <h4>B. Digital Products - Course Access (DevOps from Zero)</h4>
+      <p>Access to the DevOps from Zero masterclass is <strong>FINAL</strong>. We do not issue refunds if our system records that you have logged in, accessed, watched, or downloaded any material within the course platform.</p>
+
+      <h4>C. Freelance Development Services (Build My Project)</h4>
+      <p>Freelance services will be executed based on the mutually agreed scope of work. Cancellation and refund terms are as follows:</p>
+      <ul>
+        <li><strong>Before Work Begins:</strong> If you cancel the project before the research or coding phase begins, you are entitled to a 100% refund.</li>
+        <li><strong>Work in Progress:</strong> If the cancellation occurs while the project is currently being developed, a refund will only be issued on a prorated basis, deducting the percentage of work/milestones already completed by Softactut.</li>
+        <li><strong>Project Completed:</strong> There are NO REFUNDS for projects that have been completed and deployed/delivered. Any discrepancies in the outcome will be resolved strictly through the revision process agreed upon in the initial project contract.</li>
+      </ul>
+
+      <h3>2. Refund Exceptions (Special Conditions)</h3>
+      <p>We may approve a refund request for Digital Products only if it meets one of the following conditions:</p>
+      <ul>
+        <li><strong>Duplicate Purchase:</strong> You accidentally purchased the exact same product more than once simultaneously.</li>
+        <li><strong>Major Technical Issues:</strong> A critical error in our system prevents you from downloading the file or accessing the class entirely, and our support team is unable to resolve the issue within 3x24 hours after your report.</li>
+      </ul>
+
+      <h3>3. Procedure for Requesting a Refund</h3>
+      <p>If your request meets the eligible criteria above, please submit a refund request by contacting us at <strong>support@softactut.com</strong> (or your provided email).</p>
+      <p>As mandated by our payment gateway regulations (DOKU), you MUST include the following information in your request email:</p>
+      <ul>
+        <li>Full Name</li>
+        <li>Email Address used during the transaction</li>
+        <li>Phone Number</li>
+        <li>Transaction ID / Invoice Number</li>
+        <li>Detailed reason for the refund request</li>
+        <li>Receiving Bank Details (Bank Name, Account Holder Name, Account Number) OR the respective DOKU Wallet / e-Wallet ID.</li>
+      </ul>
+
+      <h3>4. Refund Processing Time (SLA)</h3>
+      <p>If the refund request is approved by Softactut, we will instruct DOKU to process the fund transfer:</p>
+      <ul>
+        <li><strong>Credit Card:</strong> Refunded directly to the original Credit Card limit (7-14 Business Days).</li>
+        <li><strong>Bank Transfer:</strong> Maximum of 10 Business Days.</li>
+        <li><strong>DOKU Wallet / e-Wallet:</strong> Maximum of 3 Business Days.</li>
+      </ul>
+      <p class="text-sm"><em>Note: Refunds strictly cover the Product/Service price. Third-party payment gateway or admin fees (if applicable) may not be refunded.</em></p>
+
+      <h3>5. Fraud Prevention (Chargeback Mitigation)</h3>
+      <p>Every transaction made on Softactut logs the buyer's IP Address, timestamps, and server access logs (serving as definitive proof that a file was downloaded or a course was accessed).</p>
+      <p>If a customer files a Dispute (Chargeback) claiming "item not received" while our system logs prove otherwise, Softactut will submit these access logs along with this Refund Policy directly to DOKU and the Acquirer Bank to contest the Chargeback. Filing fraudulent Chargebacks will result in a permanent ban.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-backdrop:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    background: var(--color-surface-1);
+    width: 100%;
+    max-width: 800px;
+    max-height: 85vh;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .modal-backdrop:not(.hidden) .modal-content {
+    transform: scale(1);
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .btn-close {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .btn-close:hover {
+    color: var(--color-text-primary);
+  }
+
+  .modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    color: var(--color-text-primary);
+  }
+
+  .modal-body h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    color: #fff;
+  }
+  
+  .modal-body h4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #eee;
+  }
+
+  .modal-body p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .modal-body ul {
+    margin-bottom: 24px;
+    padding-left: 20px;
+  }
+
+  .modal-body li {
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+  }
+  
+  .modal-body li strong {
+    color: var(--color-text-primary);
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Scrollbar styles for the modal */
+  .modal-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb {
+    background: var(--color-surface-3);
+    border-radius: var(--radius-xl);
+  }
+</style>
+
+<script>
+  // Script runs on client side to handle modal open/close
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('refund-modal');
+    const closeBtn = document.getElementById('close-modal');
+    
+    // Create a global function we can call from anywhere
+    window.openRefundPolicy = () => {
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling on main body
+      }
+    };
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+      
+      // Close when clicking outside
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  });
+</script>

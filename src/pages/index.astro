@@ -1,17 +1,577 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import RefundPolicyModal from '../components/RefundPolicyModal.astro';
 
+const products = [
+  {
+    title: "Guidebook for DevOps",
+    price: "$40",
+    description: "The ultimate guidebook and quick-reference guide to streamline your DevOps workflows.",
+    features: ["PDF", "Discord community & support", "Lifetime Access & Updates"],
+    primary: false,
+  },
+  {
+    title: "How to learn DevOps from zero",
+    price: "$80",
+    description: "A comprehensive masterclass designed to take you from absolute beginner to confident practitioner.",
+    features: ["Full Modules PDF", "Discord community & support", "Lifetime Access & Updates"],
+    primary: true,
+  },
+  {
+    title: "Book me to build project",
+    price: "$100",
+    description: "Hire me to personally set up, configure, and deploying your infrastructure or CI/CD pipelines.",
+    features: ["Custom Architecture", "Vulnerability Assessment", "Dedicated Support"],
+    primary: false,
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Softactut - Premium DevOps Solutions" description="Boost your DevOps skills with our premium guidebook, masterclass, or direct consulting services.">
+	<main>
+		<!-- HERO SECTION -->
+		<section class="hero container">
+			<div class="hero-content animate-fade-up">
+				<h1 class="hero-title">
+					Master <span class="text-gradient">DevOps</span>.<br />
+					Ship Faster.
+				</h1>
+				<p class="hero-subtitle delay-100">
+					Premium guides, masterclasses, and freelance services by Softactut built for developers who care about quality and speed.
+				</p>
+				<div class="hero-cta delay-200">
+					<a href="#products" class="btn btn-primary">View Products</a>
+					<a href="#contact" class="btn btn-outline">Contact Me</a>
+				</div>
+			</div>
+			
+			<div class="hero-visual animate-fade-up delay-300">
+				<!-- This mockup shows the product is real and authentic without looking "fake AI" -->
+				<div class="code-window-container">
+					<div class="glow-effect"></div>
+					
+					<!-- DevOps Guidebook Representation -->
+					<div class="code-window glass-panel">
+						<div class="window-header">
+							<div class="window-controls">
+								<span class="control red"></span>
+								<span class="control yellow"></span>
+								<span class="control green"></span>
+							</div>
+							<div class="window-title">deployment.yaml — DevOps Guide</div>
+						</div>
+						<div class="window-body">
+							<pre><code><span class="keyword">apiVersion</span>: apps/v1
+<span class="keyword">kind</span>: Deployment
+<span class="keyword">metadata</span>:
+  <span class="keyword">name</span>: softactut-app
+<span class="keyword">spec</span>:
+  <span class="keyword">replicas</span>: <span class="number">3</span>
+  <span class="keyword">template</span>:
+    <span class="keyword">spec</span>:
+      <span class="keyword">containers</span>:
+      - <span class="keyword">name</span>: app
+        <span class="keyword">image</span>: <span class="string">"softactut/prod:latest"</span></code></pre>
+						</div>
+					</div>
+					
+					<!-- Masterclass Representation -->
+					<div class="course-card glass-panel">
+						<div class="play-icon">
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path d="M8 5v14l11-7z" />
+							</svg>
+						</div>
+						<div class="course-info">
+							<h4>DevOps from Zero</h4>
+							<p>Module 4: CI/CD Pipelines</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PREVIEW SECTION -->
+		<section class="preview container">
+			<div class="preview-content animate-fade-up delay-200">
+				<div class="section-header-compact">
+					<h2>Inside the Guidebook</h2>
+					<p>A peek into the premium content you'll receive.</p>
+				</div>
+				<div class="guidebook-showcase glass-panel">
+					<img src="/assets/images/guidebook.png" alt="DevOps Guidebook Preview" class="guidebook-img" />
+					<div class="glow-effect showcase-glow"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PRODUCTS SECTION -->
+		<section id="products" class="products container">
+			<div class="section-header animate-fade-up">
+				<h2>Our Offerings</h2>
+				<p>Everything you need to excel in your next deployment.</p>
+			</div>
+			
+			<div class="product-grid">
+				{products.map((product, index) => (
+					<div class={`product-card glass-panel animate-fade-up delay-${(index + 1) * 100} ${product.primary ? 'product-primary' : ''}`}>
+						<div class="product-header">
+							<h3>{product.title}</h3>
+							<div class="price">{product.price}</div>
+						</div>
+						<p class="product-desc">{product.description}</p>
+						<ul class="product-features">
+							{product.features.map(feature => (
+								<li>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									{feature}
+								</li>
+							))}
+						</ul>
+						<button class={`btn ${product.primary ? 'btn-primary' : 'btn-outline'} w-full`}>
+							{product.price === "$100" ? "Book Now" : "Buy Now"}
+						</button>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- CONTACT SECTION -->
+		<section id="contact" class="contact container animate-fade-up">
+			<div class="contact-box glass-panel">
+				<h2>Have Questions?</h2>
+				<p>Whether you need a custom solution or have questions about a product, I'm here to help.
+				Email: zakybasith38@gmail.com</p>
+				<a href="mailto:czakybasith38@gmail.com" class="btn btn-primary">Email Me</a>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer container content-center">
+		<div class="footer-content">
+			<div class="brand">
+				<strong>Softactut</strong>
+				<p class="text-sm">© {new Date().getFullYear()} Softactut. All rights reserved.</p>
+			</div>
+			<div class="footer-links">
+				<a href="#" class="refund-link text-sm" onclick="event.preventDefault(); window.openRefundPolicy();">Refund Policy</a>
+			</div>
+		</div>
+	</footer>
+
+	<RefundPolicyModal />
+</Layout>
+
+<style>
+	/* -- HERO SECTION -- */
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 120px 24px 60px;
+		min-height: 90vh;
+	}
+
+	@media (min-width: 900px) {
+		.hero {
+			flex-direction: row;
+			text-align: left;
+			padding: 160px 24px 80px;
+		}
+		
+		.hero-content {
+			flex: 1;
+			padding-right: 60px;
+		}
+
+		.hero-visual {
+			flex: 1;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	.hero-title {
+		font-size: clamp(3rem, 6vw, 5rem);
+		font-weight: 700;
+		line-height: 1.1;
+		margin-bottom: 24px;
+		letter-spacing: -0.04em;
+	}
+
+	.hero-subtitle {
+		font-size: clamp(1.125rem, 2vw, 1.35rem);
+		color: var(--color-text-secondary);
+		max-width: 600px;
+		margin: 0 auto 40px;
+		line-height: 1.6;
+	}
+
+	@media (min-width: 900px) {
+		.hero-subtitle {
+			margin: 0 0 40px 0;
+		}
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+	}
+
+	@media (min-width: 900px) {
+		.hero-cta {
+			justify-content: flex-start;
+		}
+	}
+
+	/* Professional UI Representation */
+	.code-window-container {
+		position: relative;
+		margin-top: 60px;
+		max-width: 550px;
+		width: 100%;
+		perspective: 1000px;
+		z-index: 2;
+	}
+
+	@media (min-width: 900px) {
+		.code-window-container {
+			margin-top: 0;
+		}
+	}
+
+	.glow-effect {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgba(10, 132, 255, 0.2) 0%, rgba(0, 0, 0, 0) 60%);
+		transform: translate(-50%, -50%);
+		z-index: -1;
+		filter: blur(40px);
+	}
+
+	/* -- PREVIEW SECTION -- */
+	.preview {
+		padding: 40px 24px 80px;
+	}
+
+	.section-header-compact {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.section-header-compact h2 {
+		font-size: 2rem;
+		margin-bottom: 8px;
+	}
+
+	.guidebook-showcase {
+		position: relative;
+		border-radius: var(--radius-lg);
+		padding: 12px; /* optimal breathing room for 800px */
+		max-width: 800px; /* Increased to 800px: the perfect middle ground */
+		margin: 0 auto;
+		box-shadow: var(--shadow-lg);
+		background: rgba(28, 28, 30, 0.4);
+	}
+
+	.guidebook-img {
+		display: block;
+		width: 100%;
+		max-width: 100%; /* Force it to fill the 600px container */
+		height: auto;
+		border-radius: var(--radius-md);
+		position: relative;
+		z-index: 2;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.showcase-glow {
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(10, 132, 255, 0.15) 0%, rgba(0, 0, 0, 0) 60%);
+		z-index: 1;
+	}
+
+	.code-window {
+		background: rgba(18, 18, 20, 0.8);
+		border-radius: var(--radius-md);
+		overflow: hidden;
+		box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,0.05);
+		transform: rotateY(-5deg) rotateX(2deg);
+		transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+		padding: 0;
+	}
+
+	.code-window-container:hover .code-window, .code-window-container:focus-within .code-window {
+		transform: rotateY(0) rotateX(0) translateY(-5px);
+	}
+
+	.window-header {
+		display: flex;
+		align-items: center;
+		padding: 12px 16px;
+		background: rgba(255, 255, 255, 0.03);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.window-controls {
+		display: flex;
+		gap: 8px;
+	}
+
+	.control {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+	}
+
+	.control.red { background: #ff5f56; }
+	.control.yellow { background: #ffbd2e; }
+	.control.green { background: #27c93f; }
+
+	.window-title {
+		font-family: monospace;
+		font-size: 0.8rem;
+		color: var(--color-text-secondary);
+		margin-left: auto;
+		margin-right: auto;
+		transform: translateX(-24px); /* Center offset for controls */
+	}
+
+	.window-body {
+		padding: 24px;
+		font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+		font-size: 0.85rem;
+		line-height: 1.6;
+		overflow-x: auto;
+	}
+
+	.window-body pre {
+		margin: 0;
+	}
+
+	.keyword { color: #f92672; }
+	.string { color: #a6e22e; }
+	.number { color: #ae81ff; }
+
+	/* Course Card representation */
+	.course-card {
+		position: absolute;
+		bottom: -20px;
+		right: -10px;
+		background: rgba(28, 28, 30, 0.85);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: var(--radius-md);
+		padding: 16px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		box-shadow: var(--shadow-md);
+		transform: rotateY(-5deg) rotateX(2deg);
+		transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.code-window-container:hover .course-card, .code-window-container:focus-within .course-card {
+		transform: rotateY(0) rotateX(0) translateY(-10px);
+	}
+	
+	@media (max-width: 600px) {
+		.course-card {
+			right: 0;
+			bottom: -40px;
+		}
+	}
+
+	.play-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: var(--color-text-primary);
+		color: var(--color-bg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.play-icon svg {
+		width: 20px;
+		height: 20px;
+		margin-left: 2px;
+	}
+
+	.course-info h4 {
+		margin: 0 0 4px 0;
+		font-size: 0.95rem;
+	}
+
+	.course-info p {
+		margin: 0;
+		font-size: 0.8rem;
+		color: var(--color-text-secondary);
+	}
+
+	/* -- PRODUCTS SECTION -- */
+	.products {
+		padding: 100px 24px;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 64px;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+	}
+
+	.product-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+
+	@media (min-width: 768px) {
+		.product-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.product-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		transition: transform 0.3s ease, border-color 0.3s ease;
+	}
+
+	.product-card:hover {
+		transform: translateY(-8px);
+		border-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.product-primary {
+		border-color: rgba(10, 132, 255, 0.3);
+		position: relative;
+	}
+
+	.product-primary::before {
+		content: 'Most Popular';
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--color-text-primary);
+		color: var(--color-bg);
+		padding: 4px 12px;
+		border-radius: 20px;
+		font-size: 0.75rem;
+		font-weight: 600;
+	}
+
+	.product-header {
+		margin-bottom: 24px;
+	}
+
+	.product-header h3 {
+		font-size: 1.5rem;
+		margin-bottom: 8px;
+	}
+
+	.price {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--color-text-primary);
+	}
+
+	.product-desc {
+		flex-grow: 1;
+		margin-bottom: 32px;
+	}
+
+	.product-features {
+		list-style: none;
+		margin-bottom: 32px;
+		padding: 0;
+	}
+
+	.product-features li {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 12px;
+		font-size: 0.9rem;
+		color: var(--color-text-primary);
+	}
+
+	.product-features svg {
+		color: var(--color-accent);
+	}
+
+	.w-full {
+		width: 100%;
+	}
+
+	/* -- CONTACT SECTION -- */
+	.contact {
+		padding: 80px 24px;
+	}
+
+	.contact-box {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.contact-box h2 {
+		margin-bottom: 16px;
+	}
+	
+	.contact-box p {
+		margin-bottom: 32px;
+	}
+
+	/* -- FOOTER -- */
+	.footer {
+		padding: 60px 24px;
+		border-top: 1px solid var(--color-border);
+		margin-top: 60px;
+	}
+
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+	}
+
+	@media (min-width: 600px) {
+		.footer-content {
+			flex-direction: row;
+		}
+	}
+
+	.brand strong {
+		font-size: 1.25rem;
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.refund-link {
+		color: var(--color-text-secondary);
+		transition: color 0.2s;
+		cursor: pointer;
+	}
+
+	.refund-link:hover {
+		color: var(--color-text-primary);
+	}
+</style>
